@@ -1,4 +1,4 @@
-$menu-color: #3d3d3d;
+ $menu-color: #3d3d3d;
 $header-background: #cdcdcd;
 
 @mixin header-link($hover: true) {
@@ -15,17 +15,21 @@ $header-background: #cdcdcd;
 }
 
 .header {
-    background-color: $header-background;
+    border-bottom: solid 1px #cecece;
+    height: 80px;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
 
     &__logo {
         @include header-link(false);
+        color: #2879fe;
+          font-weight: bold;
+          font-size: 24px;
     }
 
-    &__nav-list{
+    &__nav-list {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
@@ -40,4 +44,6 @@ $header-background: #cdcdcd;
             border-bottom: solid 2px $menu-color;
         }
     }
-}
+} 
+
+

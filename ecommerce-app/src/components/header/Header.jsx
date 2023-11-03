@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom'
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
 import './header.scss'
+
 
 const Header = () => {
   const linkIsActive = (isActive) => {
@@ -8,12 +11,12 @@ const Header = () => {
 
   return (
     <nav className='header'>
-      <NavLink className='header__logo' to='/'>LOGO</NavLink>
+      <NavLink className='header__logo' to='/'>OBLICUO</NavLink>
       <ul className='header__nav-list'>
-        <li className='header__list-item'>
+        <li className='header__list-item '>
           <NavLink
             to='/'
-            className={({ isActive }) => linkIsActive(isActive)}
+            className={({ isActive }) => linkIsActive(isActive)} 
           >Home
           </NavLink>
         </li>
@@ -22,13 +25,6 @@ const Header = () => {
             to='/dashboard'
             className={({ isActive }) => linkIsActive(isActive)}
           >Dashboard
-          </NavLink>
-        </li>
-        <li className='header__list-item'>
-          <NavLink
-            to='/secret'
-            className={({ isActive }) => linkIsActive(isActive)}
-          >Secret
           </NavLink>
         </li>
         <li className='header__list-item'>
@@ -44,6 +40,11 @@ const Header = () => {
             className={({ isActive }) => linkIsActive(isActive)}
           >Sign Up
           </NavLink>
+        </li>
+        <li className='header__list-icons'>
+            <SearchIcon/>
+            <PersonIcon/>
+            
         </li>
       </ul>
     </nav>
