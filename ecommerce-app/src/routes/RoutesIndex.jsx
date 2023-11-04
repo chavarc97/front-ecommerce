@@ -1,16 +1,21 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Dashboard, Home, Login, SignUp } from '@/pages'
+import { useAuthContext } from '@/hooks/useAuthContext'
 
 const RoutesIndex = () => {
-    return (
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+  const { isAuth } = useAuthContext()
 
-      </Routes>
-    )
-  }
-  export default RoutesIndex
-
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
+      <Route
+        path='/dashboard' element={
+        isAuth ? <Dashboard /> : <Navigate to='/login' />
+      }
+      />
+    </Routes>
+  )
+}
+export default RoutesIndex

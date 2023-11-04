@@ -10,8 +10,9 @@ const Header = () => {
   }
 
   return (
-    <nav className='header'>
-      <NavLink className='header__logo' to='/'>OBLICUO</NavLink>
+    <header className=' absolute'>
+    <nav className='header fixed top-0 left-0 right-0 z-40'>
+      <NavLink className='header__logo ' to='/'>OBLICUO</NavLink>
       <ul className='header__nav-list'>
         <li className='header__list-item '>
           <NavLink
@@ -48,6 +49,7 @@ const Header = () => {
         </li>
       </ul>
     </nav>
+    </header>
   )
 }
 export default Header
