@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { loginUserService } from "@/services/userService"
+import { loginUserService } from "@/services/userServices"
 import { useAuthContext } from '@/hooks/useAuthContext'
 
 
