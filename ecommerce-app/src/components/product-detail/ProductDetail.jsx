@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react"
+import { useProductContext } from "@/hooks/useProductContext"
 
 const ProductDetail = () => {
-    const [images, setImages] = useState({
-        img1: "",
-        img2: "",
-    })
+    const { selectedProduct } = useProductContext()
 
 
     return (

@@ -1,14 +1,12 @@
 import Cards from "@/components/cards/Cards"
-import { ProductProvider } from '@/context/ProductContext'
 import { Link } from "react-router-dom"
 
 
 const Home = () => {
   return (
     <>
-      <ProductProvider>
-        <div className="products mt-24">
-          <div className="left">
+        <div className="products mt-24 flex w-full h-full ">
+          {/* <div className="left mt-24 w-full  lg:w-1/4">
             <div className="filter-item">
               <h2>Product Categories</h2>
               <div className="input-item">
@@ -30,22 +28,18 @@ const Home = () => {
                 <label htmlFor="desc">(Highest first)</label>
               </div>
             </div>
-          </div>
-          <div className="right">
-            <div className=" mt-24 container mx-auto">
-              <h1 className="text-4xl font-bold text-center mt-10">Bienvenido a la tienda</h1>
-              <p className="text-xl text-center mt-5">Aquí encontrarás los mejores productos</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-                
+          </div> */}
+          
+            <div className=" mt-24 w-full flex flex-wrap items-center justify-center gap-10">
+                <Link to={`/product/${product.id}`}>
                   <Cards />
+                </Link>
                 
 
-              </div>
             </div>
 
-          </div>
+          
         </div>
-      </ProductProvider>
 
     </>
 

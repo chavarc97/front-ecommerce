@@ -6,4 +6,5 @@ export const useProductContext = () => {
     if (!context) {
         throw new Error('useProductContext debe estar dentro del proveedor ProductContext')
     }
+    return context
 }
