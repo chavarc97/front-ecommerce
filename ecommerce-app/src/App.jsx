@@ -11,13 +11,15 @@ function App() {
 
   return (
     <>
-      <AuthProvider>
-      <BrowserRouter>
-        <Header />
-        <RoutesIndex />
-        < Footer />
-      </BrowserRouter>
-      </AuthProvider>
+      
+        <AuthProvider>
+          <BrowserRouter>
+            <Header />
+            <RoutesIndex />
+            < Footer />
+          </BrowserRouter>
+        </AuthProvider>
+      
     </>
   )
 }
