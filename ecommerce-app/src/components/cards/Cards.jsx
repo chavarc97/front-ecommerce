@@ -8,7 +8,7 @@ import { useProductContext } from '@/hooks/useProductContext'
 
 
 const Cards = () => {
-const { products, loading, setSelectedProduct } = useProductContext() || {}
+const { products, loading, setSelectedProduct } = useProductContext() 
 
 
 /*   // Estado para guardar la info de items de la API
@@ -34,7 +34,7 @@ const { products, loading, setSelectedProduct } = useProductContext() || {}
 
       {loading
       ? <h1>Cargando...</h1> 
-      : products?.map((product) => (
+      : products.map((product) => (
         
         <div className=" w-80  p-4 bg-gray-100 rounded-lg" key={product.id} onClick={() => setSelectedProduct(product)} >
           <div className="img_container   bg-gray-50 rounded-md">
