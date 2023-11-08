@@ -1,8 +1,12 @@
 import Cards from "@/components/cards/Cards"
-import { Link } from "react-router-dom"
+
+
+
 
 
 const Home = () => {
+
+
   return (
     <>
         <div className="products mt-24 flex w-full h-full ">
@@ -31,9 +35,9 @@ const Home = () => {
           </div> */}
           
             <div className=" mt-24 w-full flex flex-wrap items-center justify-center gap-10">
-                <Link to={`/product/${product.id}`}>
+
                   <Cards />
-                </Link>
+
                 
 
             </div>

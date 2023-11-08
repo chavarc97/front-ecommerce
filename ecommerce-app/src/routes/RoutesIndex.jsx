@@ -1,9 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Dashboard, Home, Login, SignUp, ProductPage } from '@/pages'
 import { useAuthContext } from '@/hooks/useAuthContext'
+import { useProductContext } from '@/hooks/useProductContext'
+
 
 const RoutesIndex = () => {
   const { isAuth } = useAuthContext()
+
+
 
   return (
     <Routes>
@@ -15,8 +19,10 @@ const RoutesIndex = () => {
         isAuth ? <Dashboard /> : <Navigate to='/login' />
       }
       />
-      < Route path='/product/:id' element={<ProductPage/>} />
+      < Route path={`/product/:id`} element={<ProductPage/>} />
     </Routes>
   )
 }
 export default RoutesIndex
+
+
