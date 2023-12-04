@@ -21,8 +21,8 @@ const Cards = () => {
 
           <Link to={`/product/${product.id}`} key={product.id}>
             <div className=" w-80  p-4 bg-gray-100 rounded-lg h-96" key={product.id} onClick={() => setSelectedProduct(product)} >
-              <div className="img_container   bg-gray-50 rounded-md">
-                <img className="object-cover" src={product.image} alt="img" />
+              <div className="img_container   bg-gray-50 rounded-md object-cover">
+                <img className="" src={product.image} alt="img" />
               </div>
               <div className="product_info mt-5">
                 <h5 className=" text-lg font-semibold ">{product.product_name}</h5>

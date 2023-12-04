@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+
 import { useProductContext } from "@/hooks/useProductContext"
 
 const ProductDetail = () => {
@@ -7,22 +7,24 @@ const ProductDetail = () => {
 
     return (
         <>
-        <div className="flex w-full h-full  relative my-32 bg-slate-50 ">
+            <section className=" pt-32 pb-12 lg:py-12 h-full flex items-center my-16">
+                <div className="container mx-auto">
+                    <div className="flex flex-col lg:flex-row items-center">
 
-            <div className="lg:flex items-center justify-center w-1/2 mx-8 ">
-                <img src={selectedProduct.image} alt="" />
-            </div>
-
-            <div className=" lg:flex relative items-center justify-center w-1/2 mx-5">
-                <h2 className="text-2xl font-bold ">{selectedProduct.product_name}</h2>
-                <h4 className="text-slate-500 font-light mt-5">{selectedProduct.description}</h4>
-                <h2 className="text-2xl font-bold mt-8 flex-col-reverse">${selectedProduct.price}</h2>
-                <div className=" absolute ">
-                    <button className="bg-gradient-to-tr from-blue-500 to-sky-500 text-white font-bold py-2 px-4 rounded-md mt-8 ">Add to cart</button>
+                        <div className=" flex flex-1 justify-center items-center mb8 lg:mb-0">
+                            <img className=" max-w-[200px] lg:max-w-sm rounded-sm" src={selectedProduct.image} alt="" />
+                        </div>
+                        <div className="flex flex-1 text-center lg:text-left mt-6">
+                            <h1 className=" text-[26px] font-bold mb-2 max-w-[450px] mx-auto">{selectedProduct.product_name}</h1>
+                        </div>
+                        <div className="text-2xl font-semibold text-red-500 mb-6 ">
+                            $ {selectedProduct.price}
+                        </div>
+                        <p className="mb-8 mx-24 text-center">{selectedProduct.description}</p>
+                        <button className="bg-gradient-to-tr from-blue-500 to-sky-500  rounded-md px-4 py-2 text-white">Add to cart</button>
+                    </div>
                 </div>
-            </div>
-
-        </div>
+            </section>
         </>
     )
 }

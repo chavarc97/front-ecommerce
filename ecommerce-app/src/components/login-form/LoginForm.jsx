@@ -7,6 +7,7 @@ import { useAuthContext } from '@/hooks/useAuthContext'
 const LoginForm = () => {
   const navigate = useNavigate()
   const { login } = useAuthContext()
+
   const {
     register,
     handleSubmit,
@@ -33,21 +34,26 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
         <div>
           <label className=" text-lg font-medium"> Email</label>
-          <input type="email"
+          <input 
+            type="email"
             className=" w-full mt-1 border-2 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
             placeholder="Enter your email"
             {...register('email', { required: true })}
           />
         </div>
         {errors.email && <span className=" font-medium text-md text-red-700 mt-4">This field is required</span>}
+
         <div className="mt-5">
           <label className=" text-lg font-medium"> Password</label>
-          <input type="password"
+          <input 
+            type="password"
             className=" w-full mt-1 border-2 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
             placeholder="Enter your password"
+            {...register('password', { required: true })}
           />
         </div>
         {errors.password && <span className=" font-medium text-md text-red-700 mt-4">This field is required</span>}
+        
         <div className="mt-8 text-center">
           <button type="submit" className="bg-gradient-to-tr from-blue-500 to-sky-500 w-full rounded-md px-4 py-2 text-white">
             Login
